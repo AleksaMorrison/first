@@ -37,7 +37,6 @@ export default {
     background-color: #ffe66d;
     position: fixed;
     top: 0;
-    overflow: hidden;
     box-shadow: inset 0px -1px 1px rgba(28, 33, 34, 0.25);
 
     & .header-nav {

@@ -172,7 +172,7 @@ export default {
 
                     &::before,
                     &::after {
-                        background-color: #ff6b6b;
+                        background-color: #6750a4;
                     }
                 }
             }
