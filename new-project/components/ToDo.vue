@@ -10,7 +10,7 @@
                 placeholder="what should I do?"
                 @keyup.enter="addTodo"
             )
-            button.add-btn(@click="addTodo")
+            button.add-btn(@click="addTodo") Add
     .todos-container
         ul.todo-list
             li.todo-item(
@@ -83,8 +83,8 @@ export default {
         gap: 20px;
         width: 100%;
         background-color: #ff6b6b;
-        border-top-right-radius: 8px;
-        border-top-left-radius: 8px;
+        border-top-right-radius: 40px;
+        border-top-left-radius: 40px;
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -97,51 +97,48 @@ export default {
             & input.todo-input {
                 width: 100%;
                 height: 40px;
-                border-radius: 4px;
+                padding: 4px;
+                border-radius: 50px;
                 border: none;
                 padding: 5px 20px;
                 box-shadow: inset 0px 1px 3px rgba(28, 33, 34, 0.25);
 
                 &:focus {
-                    box-shadow: 0 0 2px 2px #4ecdc4;
+                    box-shadow: 0 0 2px 2px #6750a4;
                     outline: 0;
                 }
             }
 
             & .add-btn {
-                width: 40px;
+                width: 100px;
                 height: 40px;
-                background-color: #f7fff7;
+                color: rgba(255, 255, 255, 1);
+                background: #6750a4;
                 position: relative;
                 border: none;
                 transition: all 0.3s ease;
-                border-radius: 100%;
+                border-radius: 100px;
                 cursor: pointer;
-                box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
-
-                &::before,
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 3px;
-                    height: 50%;
-                    background-color: #1c2122;
-                    border-radius: 2px;
-                    top: 26%;
-                    left: 47%;
-                }
-
-                &::after {
-                    transform: rotate(-90deg);
-                }
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 24px;
+                gap: 8px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
 
                 &:hover {
-                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                    background-color: #6750a4;
+                    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+                        0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+                }
 
-                    &::before,
-                    &::after {
-                        background-color: #4ecdc4;
-                    }
+                &:focus {
+                    color: rgba(255, 255, 255, 0.8);
+                    background: #6750a4;
                 }
             }
         }
@@ -165,7 +162,7 @@ export default {
             background-color: #eee8db;
             transition: background-color 0.3s ease;
             position: relative;
-            padding: 5px;
+            padding: 5px 20px;
 
             &:hover {
                 background-color: #bebebe;
@@ -194,7 +191,7 @@ export default {
                 border: none;
                 opacity: 0.3;
                 transition: all 0.3s ease;
-                right: 10px;
+                right: 20px;
                 bottom: 10px;
                 z-index: 100;
 
@@ -221,8 +218,8 @@ export default {
     & .todo-footer {
         padding: 20px;
         background-color: #ff6b6b;
-        border-bottom-right-radius: 8px;
-        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
         display: flex;
         gap: 30px;
 

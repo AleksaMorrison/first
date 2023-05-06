@@ -21,6 +21,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .container {
+    margin-top: 100px;
     padding: 20px 16px;
     height: 100%;
     width: 100%;
