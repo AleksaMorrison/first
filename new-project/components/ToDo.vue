@@ -1,7 +1,7 @@
 <template lang="pug">
-.to-do
+.to-do(:class="computedClass")
     .todo-inner
-        h2.heading My to do
+        h2.heading {{ title }}
         .todo-container
             input.todo-input(
                 autofocus
@@ -11,6 +11,8 @@
                 @keyup.enter="addTodo"
             )
             button.add-btn(@click="addTodo") Add
+    .to-do-reminder(v-if="todos.length === 0")
+        p.reminder Start day with a new todo!
     .todos-container
         ul.todo-list
             li.todo-item(
@@ -22,19 +24,20 @@
         .todo-info {{ totalToDos }}
 </template>
 
-<script>
+<script lang="ts">
 export default {
     setup() {},
 
     data: () => ({
-        todos: [],
-        newTodo: null,
+        todos: Array(),
+        newTodo: null || '',
+        title: 'My To Do',
     }),
 
     mounted() {
         if (localStorage.getItem('todos')) {
             try {
-                this.todos = JSON.parse(localStorage.getItem('todos'))
+                this.todos = JSON.parse(localStorage.getItem('todos')!)
             } catch (e) {
                 localStorage.removeItem('todos')
             }
@@ -52,7 +55,7 @@ export default {
             this.saveTodo()
         },
 
-        removeTodo(todo) {
+        removeTodo(todo: String) {
             this.todos.splice(this.todos.indexOf(todo), 1)
         },
 
