@@ -1,23 +1,13 @@
 <template lang="pug">
 div.header
     nav.header-nav
-        a.header-logo(href="#" target="_blank")
+        a.header-logo(href="/")
             span a
         ul.header-list
             li.list-item
-                a.list-link(href="#" target="_blank") about
+                a.list-link(href="/resume" target="_blank") resume
             li.list-item
-                a.list-link(href="#" target="_blank") resume
-            li.list-item
-                a.list-link(href="#" target="_blank") projects
-                div.sublist-wrapper
-                    ul.sublist
-                        li.sublist-item
-                            a.sublist-link(href="#" target="_blank") todo
-                        li.sublist-item
-                            a.sublist-link(href="#" target="_blank") another project
-                        li.sublist-item
-                            a.sublist-link(href="#" target="_blank") another project
+                a.list-link playground
             li.list-item
                 a.list-link(href="#" target="_blank") contact me
 
@@ -33,8 +23,8 @@ export default {
 .header {
     z-index: 1000;
     width: 100%;
-    height: 100px;
-    background-color: #ffe66d;
+    height: 80px;
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     box-shadow: inset 0px -1px 1px rgba(28, 33, 34, 0.25);
@@ -42,18 +32,13 @@ export default {
     & .header-nav {
         padding: 15px 40px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
+        gap: 30px;
 
         & .header-logo {
-            background-color: #0b7a75;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
             text-decoration: none;
-
+            height: 50px;
             &:hover {
                 & span {
                     color: #7b2d26;
@@ -61,20 +46,10 @@ export default {
             }
 
             & span {
-                color: #f0f3f5;
-                font-size: 40px;
+                color: black;
+                font-size: 30px;
                 transition: color 0.3s ease;
                 position: relative;
-
-                &::after {
-                    position: absolute;
-                    content: '';
-                    width: 100%;
-                    height: 4px;
-                    background-color: #f0f3f5;
-                    left: 0px;
-                    bottom: 15px;
-                }
             }
         }
     }
@@ -84,9 +59,12 @@ export default {
         gap: 20px;
 
         & .list-item {
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
             &:hover {
                 & .list-link {
-                    color: #0b7a75;
+                    color: black;
+                    opacity: 1;
                 }
 
                 & > .sublist-wrapper {
@@ -96,9 +74,10 @@ export default {
 
             & .list-link,
             & .sublist-link {
-                color: #1c2122;
+                color: black;
+                opacity: 0.5;
                 font-weight: 500;
-                transition: color 0.3s ease;
+                transition: opacity 0.3s ease;
                 text-decoration: none;
             }
 
@@ -126,7 +105,7 @@ export default {
                     & .sublist-item {
                         &:hover {
                             & .sublist-link {
-                                color: #0b7a75;
+                                opacity: 1;
                             }
                         }
                     }
