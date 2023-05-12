@@ -1,22 +1,25 @@
 <template lang="pug">
-div
-    h1 Welcome to the homepage
-    AppAlert
-        | This is an auto-imported component
-
+.space
+  .intro
+    h1 Hi, I am Aleksandra.
 </template>
 
 <script>
-import AppAlert from '../components/AppAlert'
-
-definePageMeta({
+  definePageMeta({
     layout: 'default',
-})
+  });
 
-export default {
-    components: {
-        AppAlert,
-    },
+  export default {
+    components: {},
     setup() {},
-}
+  };
 </script>
+
+<style scoped lang="scss">
+  .space {
+    & .intro {
+      display: flex;
+      justify-content: center;
+    }
+  }
+</style>

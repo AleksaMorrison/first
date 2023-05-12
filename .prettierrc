@@ -1,6 +1,17 @@
 {
+    "plugins": ["@prettier/plugin-pug"],
     "trailingComma": "es5",
-    "tabWidth": 4,
-    "semi": false,
-    "singleQuote": true
-}
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 120,
+    "pugAttributeSeparator": "none",
+    "pugBracketSpacing": true,
+    "pugSingleQuote": false,
+    "pugWrapAttributesThreshold": 2,
+    "pugBracketSameLine": false,
+    "pugSortAttributes": "asc",
+    "pugSortAttributesBeginning": ["v-if", "^v-else$", "^v-for$", "^(?!:|@|v-.+).+$", "^:.+$", "^@.+$"],
+    "pugPrintWidth": 120,
+    "vueIndentScriptAndStyle": true
+  }
