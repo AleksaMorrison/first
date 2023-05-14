@@ -1,0 +1,1 @@
+export { default } from "file:///Users/aleksa/Desktop/Aleksa/dev/project1/first/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
