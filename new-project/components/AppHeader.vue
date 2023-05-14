@@ -44,7 +44,7 @@
         height: 50px;
         &:hover {
           & span {
-            color: #6750a4;
+            color: #f8e16c;
           }
         }
 

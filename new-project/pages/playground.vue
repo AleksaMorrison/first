@@ -4,18 +4,18 @@
     nav.links
       ul.list-links
         li.list-item
-          a.list-link(href="#todo") todo
+          a.list-link(href="#todo") Todo
         li.list-item
-          a.list-link(href="#other1") other
+          a.list-link(href="#weather") Weather
         li.list-item
-          a.list-link(href="#other2") other
+          a.list-link(href="#other2") other2
 
   #todo.space
     .todo
       ToDo
-  #other1.space
-    .todo
-      ToDo
+  #weather.space
+    .weather
+      Weather
   #other2.space
     .todo
       ToDo
@@ -23,6 +23,7 @@
 
 <script>
   import ToDo from '../components/ToDo';
+  import Weather from '../components/Weather';
 
   definePageMeta({
     layout: 'default',
@@ -31,6 +32,7 @@
   export default {
     components: {
       ToDo,
+      Weather,
     },
     setup() {},
   };

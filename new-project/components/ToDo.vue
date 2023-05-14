@@ -1,7 +1,7 @@
 <template lang="pug">
 .to-do(:class="computedClass")
   .todo-inner
-    h2.heading {{ title }}
+    .heading {{ title }}
     .todo-container
       input#input.todo-input(
         autofocus
@@ -22,8 +22,6 @@
 </template>
 
 <script lang="ts">
-  import { handleError } from 'nuxt/dist/app/compat/capi';
-
   export default {
     data() {
       return {
@@ -67,7 +65,6 @@
     watch: {
       todos: {
         handler(newValue: any, oldValue: any) {
-          console.log('todo', newValue, oldValue);
           this.saveTodo();
         },
         deep: true,
@@ -132,7 +129,6 @@
           padding: 10px 24px;
           gap: 8px;
           font-style: normal;
-          font-weight: 500;
           font-size: 14px;
           line-height: 20px;
 
