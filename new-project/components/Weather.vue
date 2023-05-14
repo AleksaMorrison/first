@@ -34,7 +34,7 @@
         fetchWeather(6167865);
       },
 
-      // drawWeather(d: any) {
+      // showWeather(d: any) {
       //   const celcius = Math.round(parseFloat(d.main.temp) - 273.15);
       //   const fahrenheit = Math.round((parseFloat(d.main.temp) - 273.15) * 1.8 + 32);
 
