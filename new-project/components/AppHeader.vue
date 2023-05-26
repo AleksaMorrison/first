@@ -2,19 +2,33 @@
 .header
   nav.header-nav
     a.header-logo(href="/")
-      span a
     ul.header-list
-      li.list-item
-        a.list-link(href="/resume") resume
-      li.list-item
-        a.list-link(href="/playground") playground
-      li.list-item
-        a.list-link(href="/contact") contact
+      li.list-item(v-for="link in links" :class="[isActive ? 'active' : '']")
+        router-link.list-link(:to="link.path") {{ link.name }}
 </template>
 
 <script>
   export default {
-    setup() {},
+    data() {
+      return {
+        isActive: false,
+        links: [
+          {
+            path: '/resume',
+            name: 'resume',
+          },
+          {
+            path: '/playground',
+            name: 'playground',
+          },
+          {
+            path: '/contact',
+            name: 'contact',
+          },
+        ],
+      };
+    },
+    computed: {},
   };
 </script>
 
@@ -42,17 +56,25 @@
       & .header-logo {
         text-decoration: none;
         height: 50px;
-        &:hover {
-          & span {
-            color: #f8e16c;
-          }
-        }
+        width: 50px;
+        position: relative;
 
-        & span {
+        &::before {
+          content: 'a';
           color: black;
           font-size: 30px;
           transition: color 0.3s ease;
           position: relative;
+        }
+
+        &:hover {
+          &::before {
+            content: 'a';
+            color: #ffd166;
+            font-size: 30px;
+            transition: color 0.3s ease;
+            position: relative;
+          }
         }
       }
     }
@@ -71,14 +93,34 @@
         &:focus {
           & .list-link {
             color: black;
+
+            &::before {
+              content: '';
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
           }
         }
 
         & .list-link {
           color: #979797;
           font-weight: 500;
-          transition: color 0.3s ease;
+          transition: all 0.3s ease;
           text-decoration: none;
+          position: relative;
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            top: 20px;
+            left: 0;
+            background-color: #ffd166;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+          }
         }
       }
     }

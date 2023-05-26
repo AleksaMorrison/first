@@ -30,9 +30,9 @@
             // this.weather = data;
           });
       },
-      onWindowLoad() {
-        fetchWeather(6167865);
-      },
+      // onWindowLoad() {
+      //   fetchWeather(6167865);
+      // },
 
       // showWeather(d: any) {
       //   const celcius = Math.round(parseFloat(d.main.temp) - 273.15);
@@ -102,7 +102,3 @@
     }
   }
 </style>
-
-function fetchWeather(arg0: number) { throw new Error('Function not implemented.'); } function fetchWeather(arg0:
-number) { throw new Error('Function not implemented.'); } function fetchWeather(arg0: number) { throw new
-Error('Function not implemented.'); }
